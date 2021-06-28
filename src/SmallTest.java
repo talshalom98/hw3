@@ -51,7 +51,7 @@ public class SmallTest {
                     break;
             }
         }
-        zoo.showAnimalsInfo();
+        zoo.AnimalsInfo();
         System.out.println();
 
         // Add the second half of observers
@@ -80,10 +80,10 @@ public class SmallTest {
             if (i % 10 == 0) {
                 System.out.println();
                 zoo.addAnimal(unicornFactory.createAnimal());
-                zoo.showAnimalsInfo();
+                zoo.AnimalsInfo();
             }
             System.out.println();
         }
-        zoo.showAnimalsInfo();
+        zoo.AnimalsInfo();
     }
 }

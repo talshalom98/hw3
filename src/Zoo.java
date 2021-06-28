@@ -55,7 +55,7 @@ public class Zoo {
     /**
      * prints the current status of the zoo
      */
-    public void showAnimalsInfo() {
+    public void AnimalsInfo() {
         System.out.println("The zoo contains total of " + animals.size() + " animals:");
         for (String animalType : animalTypes){
             System.out.println("- "+animalType+": "+numberOfAnimalByType(animalType));
