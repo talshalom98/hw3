@@ -27,13 +27,13 @@ public class Zoo {
      * @return number of animals of that type in the zoo
      */
     public int numberOfAnimalByType(String type){
-        int counter = 0;
+        int count = 0;
         for(Animal animal : animals){
             String animalType = animal.getClass().getName();
             if (animalType.equals(type))
-                counter = counter+1;
+                count++;
         }
-        return counter;
+        return count;
 
 
     }
