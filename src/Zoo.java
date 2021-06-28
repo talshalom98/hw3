@@ -26,7 +26,7 @@ public class Zoo {
      * @param type a type of an animal
      * @return number of animals of that type in the zoo
      */
-    public int numberOfAnimalByType(String type){
+    public int numOfAnimals(String type){
         int count = 0;
         for(Animal animal : animals){
             String animalType = animal.getClass().getName();
@@ -58,7 +58,7 @@ public class Zoo {
     public void AnimalsInfo() {
         System.out.println("The zoo contains total of " + animals.size() + " animals:");
         for (String animalType : animalTypes){
-            System.out.println("- "+animalType+": "+numberOfAnimalByType(animalType));
+            System.out.println("- "+animalType+": "+numOfAnimals(animalType));
         }
         System.out.println("Happiness level: "+happiness);
         if (happiness < 3)
