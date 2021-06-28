@@ -43,8 +43,8 @@ public class Zoo {
 
     public static Zoo getInstance() {
         /**
-         * makes sure the user can create only one zoo
-         * @return the instance of the one and only zoo
+         * makes sure that zoo will create only once
+         * @return the instance of the one zoo
          */
         if (instance == null) {
             instance = new Zoo();
@@ -108,7 +108,7 @@ public class Zoo {
 
     }
 
-    /**
+    /*
      * adds an observer to the zoo
      * @param observer is an observer to add
      */
