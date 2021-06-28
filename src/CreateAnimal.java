@@ -1,4 +1,4 @@
-public abstract class AnimalFactory {
+public abstract class CreateAnimal {
     public abstract Animal createAnimal();
 
 }

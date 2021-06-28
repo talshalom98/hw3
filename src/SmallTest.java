@@ -25,9 +25,9 @@ public class SmallTest {
         Zoo zoo2 = Zoo.getInstance();
 
         System.out.println();
-        AnimalFactory unicornFactory = new UnicornFactory();
-        AnimalFactory zebraFactory = new ZebraFactory();
-        AnimalFactory monkeyFactory = new MonkeyFactory();
+        CreateAnimal unicornFactory = new UnicornCreate();
+        CreateAnimal zebraFactory = new ZebraCreate();
+        CreateAnimal monkeyFactory = new MonkeyCreate();
 
         // Add the first half of observers
         for (int i = 0; i < observers.length / 2; i++) {

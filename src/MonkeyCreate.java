@@ -1,4 +1,4 @@
-public class MonkeyFactory extends AnimalFactory {
+public class MonkeyCreate extends CreateAnimal {
     @Override
     /**
      * creates monkey

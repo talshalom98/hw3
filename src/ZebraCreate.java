@@ -1,4 +1,4 @@
-public class ZebraFactory extends AnimalFactory {
+public class ZebraCreate extends CreateAnimal {
     @Override
     /**
      * creates a zebra

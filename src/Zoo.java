@@ -21,7 +21,19 @@ public class Zoo {
         animalTypes = new HashSet<>();
 
     }
-
+    public static Zoo getInstance() {
+        /**
+         * makes sure that zoo will create only once
+         * @return the instance of the one zoo
+         */
+        if (instance == null) {
+            instance = new Zoo();
+            System.out.println("Creating zoo...");
+        }
+        else
+            System.out.println("The zoo already exists...");
+        return instance;
+    }
 
     public int numOfAnimals(String type){
         /**
@@ -39,22 +51,20 @@ public class Zoo {
 
 
     }
-
-
-    public static Zoo getInstance() {
+    public void feedAnimals() {
         /**
-         * makes sure that zoo will create only once
-         * @return the instance of the one zoo
+         * lowers the hunger level by one and informs the observers
          */
-        if (instance == null) {
-            instance = new Zoo();
-            System.out.println("Creating zoo...");
+        if(hunger>1)
+            hunger--;
+        for (Animal animal : animals) {
+            animal.eat();
         }
-        else
-        System.out.println("The zoo already exists...");
-        return instance;
+        System.out.println("Notifying observers:");
+        for (Observer observer : observers) {
+            observer.update("The animals are being fed");
+        }
     }
-
 
     public void AnimalsInfo() {
         /**
@@ -76,23 +86,6 @@ public class Zoo {
 
     }
 
-
-    public void feedAnimals() {
-        /**
-         * lowers the hunger level by one and informs the observers
-         */
-        if(hunger>1)
-        hunger--;
-        for (Animal animal : animals) {
-            animal.eat();
-        }
-        System.out.println("Notifying observers:");
-        for (Observer observer : observers) {
-            observer.update("The animals are being fed");
-        }
-    }
-
-
     public void addAnimal(Animal animal) {
         /**
          * adds an animal to the zoo and informs the observers
@@ -106,6 +99,22 @@ public class Zoo {
             observer.update(animalType + " has been added to the zoo!");
         }
 
+    }
+    public void watchAnimals() {
+        /**
+         * raises happiness and hunger level and informs the observers
+         */
+        if(happiness<5)
+            happiness++;
+        if(hunger<5)
+            hunger++;
+        for (Animal animal : animals) {
+            animal.perform();
+        }
+        System.out.println("Notifying observers:");
+        for (Observer observer : observers) {
+            observer.update("The animals are being watched");
+        }
     }
 
     /*
@@ -123,23 +132,5 @@ public class Zoo {
      */
     public void removeObserver(ZooObserver observer) {
         observers.remove(observer);
-    }
-
-
-    public void watchAnimals() {
-        /**
-         * raises happiness and hunger level and informs the observers
-         */
-        if(happiness<5)
-        happiness++;
-        if(hunger<5)
-        hunger++;
-        for (Animal animal : animals) {
-            animal.perform();
-        }
-        System.out.println("Notifying observers:");
-        for (Observer observer : observers) {
-            observer.update("The animals are being watched");
-        }
     }
 }

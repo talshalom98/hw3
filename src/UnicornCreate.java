@@ -1,4 +1,4 @@
-public class UnicornFactory extends AnimalFactory {
+public class UnicornCreate extends CreateAnimal {
     @Override
     /**
      * creates an unicorn
