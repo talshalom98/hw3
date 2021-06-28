@@ -9,10 +9,11 @@ public class Zoo {
     ArrayList<ZooObserver> observers;
     HashSet<String> animalTypes;
 
-    /**
-     * creates a singleton style instance of a zoo
-      */
+
     private Zoo() {
+        /**
+         * creates a singleton style instance of a zoo
+         */
         hunger = 3;
         happiness = 2;
         animals = new ArrayList<>();
@@ -21,12 +22,13 @@ public class Zoo {
 
     }
 
-    /**
-     *
-     * @param type a type of an animal
-     * @return number of animals of that type in the zoo
-     */
+
     public int numOfAnimals(String type){
+        /**
+         *
+         * @param type is a type of an animal
+         * @return the number of animals that there type is in the zoo
+         */
         int count = 0;
         for(Animal animal : animals){
             String animalType = animal.getClass().getName();
@@ -38,11 +40,12 @@ public class Zoo {
 
     }
 
-    /**
-     * makes sure the user can create only one zoo
-      * @return the instance of the one and only zoo
-     */
+
     public static Zoo getInstance() {
+        /**
+         * makes sure the user can create only one zoo
+         * @return the instance of the one and only zoo
+         */
         if (instance == null) {
             instance = new Zoo();
             System.out.println("Creating zoo...");
@@ -52,10 +55,11 @@ public class Zoo {
         return instance;
     }
 
-    /**
-     * prints the current status of the zoo
-     */
+
     public void AnimalsInfo() {
+        /**
+         * prints the current status of the zoo
+         */
         System.out.println("The zoo contains total of " + animals.size() + " animals:");
         for (String animalType : animalTypes){
             System.out.println("- "+animalType+": "+numOfAnimals(animalType));
@@ -72,12 +76,13 @@ public class Zoo {
 
     }
 
-    /**
-     * lowers the hunger level by one and informs the observers
-      */
+
     public void feedAnimals() {
+        /**
+         * lowers the hunger level by one and informs the observers
+         */
         if(hunger>1)
-        hunger = hunger - 1;
+        hunger--;
         for (Animal animal : animals) {
             animal.eat();
         }
@@ -87,11 +92,12 @@ public class Zoo {
         }
     }
 
-    /**
-     * adds an animal to the zoo and informs the observers
-     * @param animal an animal to add
-     */
+
     public void addAnimal(Animal animal) {
+        /**
+         * adds an animal to the zoo and informs the observers
+         * @param animal an animal to add
+         */
         animals.add(animal);
         String animalType = animal.getClass().getName();
         animalTypes.add(animalType);
@@ -110,6 +116,7 @@ public class Zoo {
         observers.add(observer);
     }
 
+
     /**
      * removes an observer from the zoo
      * @param observer an observer to remove
@@ -118,14 +125,15 @@ public class Zoo {
         observers.remove(observer);
     }
 
-    /**
-     * raises happiness and hunger level and informs the observers
-     */
+
     public void watchAnimals() {
+        /**
+         * raises happiness and hunger level and informs the observers
+         */
         if(happiness<5)
-        happiness = happiness + 1;
+        happiness++;
         if(hunger<5)
-        hunger = hunger + 1;
+        hunger++;
         for (Animal animal : animals) {
             animal.perform();
         }
