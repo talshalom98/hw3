@@ -96,7 +96,7 @@ public class Zoo {
     public void addAnimal(Animal animal) {
         /**
          * adds an animal to the zoo and informs the observers
-         * @param animal an animal to add
+         * @param animal is an animal to add
          */
         animals.add(animal);
         String animalType = animal.getClass().getName();
@@ -110,7 +110,7 @@ public class Zoo {
 
     /**
      * adds an observer to the zoo
-     * @param observer an observer to add
+     * @param observer is an observer to add
      */
     public void addObserver(ZooObserver observer) {
         observers.add(observer);
@@ -119,7 +119,7 @@ public class Zoo {
 
     /**
      * removes an observer from the zoo
-     * @param observer an observer to remove
+     * @param observer is an observer to remove
      */
     public void removeObserver(ZooObserver observer) {
         observers.remove(observer);
